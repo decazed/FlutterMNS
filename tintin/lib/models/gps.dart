@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:hive_flutter/adapters.dart';
 
 part 'gps.g.dart';

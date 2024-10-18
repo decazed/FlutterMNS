@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:tintin/models/album.dart';
 import 'package:tintin/services/album_service.dart';
 import 'package:tintin/widgets/album_preview.dart';
+import 'package:tintin/screens/album_full_map.dart';
+
+import '../widgets/album_map_preview.dart';
 
 class AlbumMaster extends StatelessWidget {
   const AlbumMaster({super.key});
@@ -21,6 +24,23 @@ class AlbumMaster extends StatelessWidget {
           backgroundColor: Colors.cyan,
           title: Text('Albums', style: TextStyle(color: Colors.white)),
           centerTitle: true,
+          actions: [
+            FutureBuilder<List<Album>>(
+              future: AlbumService.fetchAlbums(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  final albums = snapshot.data!;
+                  return AlbumMapPreview(albums: albums);
+                } else if (snapshot.hasError) {
+                  return Text('Error: ${snapshot.error}');
+                } else {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              },
+            ),
+          ],
         ),
         body: FutureBuilder<List<Album>>(
           future: AlbumService.fetchAlbums(),

@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:faker/faker.dart';
 import 'package:tintin/models/album.dart';
 import 'package:tintin/models/gps.dart';

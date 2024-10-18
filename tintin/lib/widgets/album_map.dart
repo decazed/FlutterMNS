@@ -11,7 +11,6 @@ class AlbumMap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(gps);
     return SizedBox(
       height: height,
       width: width,

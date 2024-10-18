@@ -17,7 +17,7 @@ class ReadingListProvider extends ChangeNotifier {
 
   void addAlbum(Album album) {
     _albums.add(album);
-    HiveDatabaseHelper().insertAlbum(album);
+    HiveDatabaseHelper().addAlbum(album);
     notifyListeners();
   }
 

@@ -8,9 +8,9 @@ class HiveDatabaseHelper {
     await Hive.openBox<Album>(albumsBoxName);
   }
 
-  Future<void> insertAlbum(Album album) async {
+  Future<void> addAlbum(Album album) async {
     var box = await Hive.openBox<Album>(albumsBoxName);
-    box.put(album.numero, album);  // Utilise numero comme clé
+    box.put(album.numero, album);
   }
 
   Future<void> deleteAlbum(int numero) async {

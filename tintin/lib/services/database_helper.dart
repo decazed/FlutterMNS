@@ -55,7 +55,7 @@ class DatabaseHelper {
     final List<Map<String, dynamic>> maps = await db.query(table);
 
     return List.generate(maps.length, (i) {
-      return Album.fromMap(maps[i]);
+      return Album.fromJson(maps[i]);
     });
   }
 }

@@ -85,17 +85,4 @@ class Album extends HiveObject {
       'location' : location,
     };
   }
-
-  factory Album.fromMap(Map<String, dynamic> map) {
-    return Album(
-      numero: map['numero'],
-      title: map['title'],
-      year: map['year'],
-      yearInColor: map['yearInColor'],
-      image: map['image'],
-      resume: map['resume'],
-      gps: GPS.fromMap(map),
-      location: map['location'],
-    );
-  }
 }

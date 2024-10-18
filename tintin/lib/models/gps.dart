@@ -35,11 +35,4 @@ class GPS {
       'longitude': longitude,
     };
   }
-
-  factory GPS.fromMap(Map<String, dynamic> map) {
-    return GPS(
-      latitude: map['latitude'],
-      longitude: map['longitude']
-    );
-  }
 }

@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tintin/models/album.dart';
 import 'package:tintin/services/album_service.dart';
 import 'package:tintin/widgets/album_preview.dart';
-import 'package:tintin/screens/album_full_map.dart';
-
-import '../widgets/album_map_preview.dart';
+import '../widgets/album_full_map_preview.dart';
 
 class AlbumMaster extends StatelessWidget {
   const AlbumMaster({super.key});
@@ -30,7 +28,7 @@ class AlbumMaster extends StatelessWidget {
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   final albums = snapshot.data!;
-                  return AlbumMapPreview(albums: albums);
+                  return AlbumFullMapPreview(albums: albums);
                 } else if (snapshot.hasError) {
                   return Text('Error: ${snapshot.error}');
                 } else {

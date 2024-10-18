@@ -5,8 +5,8 @@ import '../models/album.dart';
 import '../providers/reading_list_provider.dart';
 import '../screens/album_full_map.dart';
 
-class AlbumMapPreview extends StatelessWidget {
-  const AlbumMapPreview({super.key, required this.albums});
+class AlbumFullMapPreview extends StatelessWidget {
+  const AlbumFullMapPreview({super.key, required this.albums});
   final List<Album> albums;
 
   @override

@@ -45,7 +45,7 @@ class AlbumDetails extends StatelessWidget {
           ),
           body: SingleChildScrollView(
             child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 16.0),
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
                 alignment: Alignment.center,
                 child: Column(
                   children: [
@@ -77,8 +77,8 @@ class AlbumDetails extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Text("Latitude:${album.gps.latitude}", style: whiteTextStyle),
-                    Text("Longitude:${album.gps.longitude}", style: whiteTextStyle),
+                    Text("Latitude : ${album.gps.latitude}", style: whiteTextStyle),
+                    Text("Longitude : ${album.gps.longitude}", style: whiteTextStyle),
                     AlbumMap(gps: album.gps, height: 400, width: 700),
                   ],
                 )

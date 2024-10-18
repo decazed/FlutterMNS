@@ -15,7 +15,15 @@ class AlbumPreview extends StatelessWidget {
     return ListTile(
       title: Text(album.title, style: TextStyle(color: Colors.white)),
       leading: Image.asset(album.image),
-      trailing: readingListProvider.contains(album) ? Icon(Icons.favorite, color: Colors.red) : Icon(Icons.favorite_border, color: Colors.white),
+      trailing: readingListProvider.contains(album) ?
+        IconButton(
+          onPressed: () => readingListProvider.removeAlbum(album),
+          icon: Icon(Icons.favorite, color: Colors.red),
+        ) :
+        IconButton(
+          onPressed: () => readingListProvider.addAlbum(album),
+          icon: Icon(Icons.favorite_border, color: Colors.white),
+        ),
       onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) => AlbumDetails(key: key, album: album)));},
     );
   }
